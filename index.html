@@ -21,7 +21,7 @@
 
     <!-- Theme CSS -->
     <link href="css/grayscale.min.css" rel="stylesheet">
-
+     <link href="css/map.css" rel="stylesheet">
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -30,6 +30,7 @@
     <![endif]-->
 	<script src = "js/angular.min.js"></script>
     <script src="js/weatherForecast.module.js"></script>
+    <script src="js/geolocation.js"></script>
    <script src="app/controllers/weatherForecast.city.controller.js"></script>
 
 </head>
@@ -110,7 +111,43 @@
 
 
     <!-- Map Section -->
-    <div id="map"></div>
+     <!--div class="pac-card" id="pac-card">
+      <div>
+        <div id="title">
+          Autocomplete search
+        </div>
+        <div id="type-selector" class="pac-controls">
+          <input type="radio" name="type" id="changetype-all" checked="checked">
+          <label for="changetype-all">All</label>
+
+          <input type="radio" name="type" id="changetype-establishment">
+          <label for="changetype-establishment">Establishments</label>
+
+          <input type="radio" name="type" id="changetype-address">
+          <label for="changetype-address">Addresses</label>
+
+          <input type="radio" name="type" id="changetype-geocode">
+          <label for="changetype-geocode">Geocodes</label>
+        </div>
+        <div id="strict-bounds-selector" class="pac-controls">
+          <input type="checkbox" id="use-strict-bounds" value="">
+          <label for="use-strict-bounds">Strict Bounds</label>
+        </div>
+      </div>
+    
+    </div-->
+      
+  
+    <div id="map"></div></br>
+       <div id="pac-container" class="text-center">
+        <input id="pac-input" type="text"
+            placeholder="Enter a location" style="color: black;">
+      </div>
+    <div id="infowindow-content">
+      <img src="" width="16" height="16" id="place-icon">
+      <span id="place-name"  class="title"></span><br>
+      <span id="place-address"></span>
+    </div>
 
     <!-- Footer -->
     <footer>
@@ -129,8 +166,12 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
 
     <!-- Google Maps API Key - Use your own API key to enable the map feature. More information on the Google Maps API can be found at https://developers.google.com/maps/ -->
-    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCRngKslUGJTlibkQ3FkfTxj3Xss1UlZDA&sensor=false"></script>
-
+    <!--script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCRngKslUGJTlibkQ3FkfTxj3Xss1UlZDA&sensor=false"></script-->
+  
+  
+  <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBhOF7XFRsRDluy3y48w9vYACFBVBEuKrc&callback=initMap&sensor=false&libraries=places">
+    </script>
     <!-- Theme JavaScript -->
     <script src="js/grayscale.min.js"></script>
 

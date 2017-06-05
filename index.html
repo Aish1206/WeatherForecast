@@ -45,7 +45,7 @@
                     Menu <i class="fa fa-bars"></i>
                 </button>
                 <a class="navbar-brand page-scroll" href="https://www.youtube.com/watch?v=t2aWyRtnRCg">
-                    <i class="fa fa-play-circle"></i> <span class="light">Weather </span>Report Streaming
+                    <i class="fa fa-play-circle"></i> <span class="light">Weather </span>Report Live
                 </a>
             </div>
 
@@ -78,7 +78,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-8 col-md-offset-2">
-                        <h1 class="brand-heading">Weather At your Click</h1>
+                        <h1 class="brand-heading">Weather Forecast</h1>
                         <p class="intro-text">A free, responsive, one page App
                             <br>for Weather Report around the world.</p>
                         <a href="#about" class="btn btn-circle page-scroll">
@@ -141,8 +141,9 @@
     <div id="map"></div></br>
        <div id="pac-container" class="text-center">
         <input id="pac-input" type="text"
-            placeholder="Enter a location" style="color: black;">
+            placeholder="Enter a location" style="color: black;" ng-model="typeCity" ng-change="typedCity(typeCity)">
       </div>
+      <p>Temprature is : {{cityTemp}} C<p>
     <div id="infowindow-content">
       <img src="" width="16" height="16" id="place-icon">
       <span id="place-name"  class="title"></span><br>

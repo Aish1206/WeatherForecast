@@ -7,6 +7,10 @@
           center: {lat: 28.7041, lng: 77.1025},
           zoom: 5
         });
+        var options = {
+          types: ['(cities)'],
+        };
+
       //  var card = document.getElementById('pac-card');
        
         var input = document.getElementById('pac-input');
@@ -15,8 +19,8 @@
 
         //map.controls[google.maps.ControlPosition.TOP_RIGHT].push(card);
 
-        var autocomplete = new google.maps.places.Autocomplete(input);
-       
+        var autocomplete = new google.maps.places.Autocomplete(input,options);
+       //console.log(autocomplete);
         // Bind the map's bounds (viewport) property to the autocomplete object,
         // so that the autocomplete requests use the current map bounds for the
         // bounds option in the request.
@@ -53,11 +57,13 @@
 
           var address = '';
           if (place.address_components) {
+           // var city=place.address_components[1];
             address = [
               (place.address_components[0] && place.address_components[0].short_name || ''),
               (place.address_components[1] && place.address_components[1].short_name || ''),
               (place.address_components[2] && place.address_components[2].short_name || '')
             ].join(' ');
+            //console.log(place.address_components[1]);
           }
 
           infowindowContent.children['place-icon'].src = place.icon;

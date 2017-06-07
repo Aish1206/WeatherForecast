@@ -35,7 +35,7 @@
 
 </head>
 
-<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+<body id="page-top" ng-app="mainApp" ng-controller="weatherControllerCity" data-spy="scroll" data-target=".navbar-fixed-top">
 
     <!-- Navigation -->
     <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
@@ -101,7 +101,7 @@
     </section>
 
     <!-- Download Section -->
-    <div id="weatherReport" ng-app="mainApp" ng-controller="weatherControllerCity" class="container content-section text-center">
+    <div id="weatherReport"  class="container content-section text-center">
       Select City  <select ng-model="selectedCity" ng-options="city.id as city.name for city in choseCity" 
       ng-change="changedCity(selectedCity)" style="color: initial;">
         <option value="">Select City</option>
@@ -141,9 +141,9 @@
     <div id="map"></div></br>
        <div id="pac-container" class="text-center">
         <input id="pac-input" type="text"
-            placeholder="Enter a location" style="color: black;" ng-model="typeCity" ng-change="typedCity(typeCity)">
+            placeholder="Enter a location" style="background-color: black;" ng-model="typeCity" ng-click="callMe()" ng-blur="typedCity(typeCity)" ng-keyup="$event.keyCode ==13 ? typedCity(typeCity) : null"/>
       </div>
-      <p>Temprature is : {{cityTemp}} C<p>
+      <p>Temprature is : {{cityTemp}} C</p>
     <div id="infowindow-content">
       <img src="" width="16" height="16" id="place-icon">
       <span id="place-name"  class="title"></span><br>

@@ -1,5 +1,5 @@
 mainApp.controller("weatherControllerCity",function($scope, $http){
-    
+
 $scope.choseCity = [ {
     "id": 707860,
     "name": "Hurzuf",
@@ -245,7 +245,6 @@ $scope.changedCity=function(selectedCity){
 $scope.typedCity=function(typeCity){ 
     var url="http://api.openweathermap.org/data/2.5/weather?q="+typeCity+"&APPID=c80ead4f673c307499732c028ec3b7f0";
     $http.get(url).then(function(response){
-    //$scope.cityTemp=response.data;
     $scope.cityTempKelvin=response.data;
     $scope.cityTemp=$scope.cityTempKelvin.main.temp-273.15;
 });
